@@ -68,11 +68,9 @@ func makeMaze(video bool) error {
 			} else {
 				cells[x][y] = right
 			}
-			if x == cellsWidth-1 && y == cellsHeight-1 {
-				cells[x][y] = none
-			}
 		}
 	}
+	cells[cellsWidth-1][cellsHeight-1] = none
 
 	makeImage := func() *gg.Context {
 		dc := gg.NewContext(imageWidth, imageHeight)
